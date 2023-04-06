@@ -1,0 +1,41 @@
+tj@desktop:~/docker$ docker pull devopsdockeruh/simple-web-service:ubuntu
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+5d3b2c2d21bb: Pull complete 
+3fc2062ea667: Pull complete 
+75adf526d75b: Pull complete 
+965d4bbb586a: Pull complete 
+4f4fb700ef54: Pull complete 
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+
+tj@desktop:~/docker$ docker pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+ba3557a56b15: Pull complete 
+1dace236434b: Pull complete 
+4f4fb700ef54: Pull complete 
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+
+tj@desktop:~/docker$ docker image ls
+REPOSITORY                          TAG       IMAGE ID       CREATED       SIZE
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 years ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 years ago   15.7MB
+
+tj@desktop:~/docker$ docker run -it fd312adc88e0
+Starting log output
+Wrote text to /usr/src/app/text.log
+
+tj@desktop:~/docker$ docker container ls
+CONTAINER ID   IMAGE          COMMAND                 CREATED          STATUS          PORTS     NAMES
+7d022d8d48c7   fd312adc88e0   "/usr/src/app/server"   12 seconds ago   Up 11 seconds             festive_bhaskara
+
+tj@desktop:~/docker$ docker exec -it festive_bhaskara sh
+/usr/src/app # cat /usr/src/app/text.log
+2023-04-04 07:22:24 +0000 UTC
+2023-04-04 07:22:26 +0000 UTC
+2023-04-04 07:22:28 +0000 UTC
+2023-04-04 07:22:30 +0000 UTC
+2023-04-04 07:22:32 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'

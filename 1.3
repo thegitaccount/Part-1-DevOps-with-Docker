@@ -1,0 +1,19 @@
+tj@desktop:~$ docker run -it devopsdockeruh/simple-web-service:ubuntu
+
+tj@desktop:~$ docker ps -as
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED          STATUS          PORTS     NAMES          SIZE
+947d5dd2f11f   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   23 seconds ago   Up 22 seconds             great_diffie   530B (virtual 83MB)
+
+tj@desktop:~$ docker exec -it great_diffie bash
+root@947d5dd2f11f:/usr/src/app# tail -f ./text.log
+2023-04-01 17:18:20 +0000 UTC
+2023-04-01 17:18:22 +0000 UTC
+2023-04-01 17:18:24 +0000 UTC
+2023-04-01 17:18:26 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+2023-04-01 17:18:28 +0000 UTC
+2023-04-01 17:18:30 +0000 UTC
+2023-04-01 17:18:32 +0000 UTC
+2023-04-01 17:18:34 +0000 UTC
+2023-04-01 17:18:36 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'

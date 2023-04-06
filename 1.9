@@ -1,0 +1,12 @@
+tj@desktop:~/docker$ touch text.log
+tj@desktop:~/docker$ docker run -v "$(pwd)/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+^Ctj@desktop:~/docker$ cat text.log
+2023-04-05 08:56:04 +0000 UTC
+2023-04-05 08:56:06 +0000 UTC
+2023-04-05 08:56:08 +0000 UTC
+2023-04-05 08:56:10 +0000 UTC
